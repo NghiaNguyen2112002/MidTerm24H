@@ -18,6 +18,7 @@
 
 enum Buttons {button0, button1, button2};
 
+void InitButtonReading(void);
 void ButtonReading(void);				//invoke this function in timer.c to read button
 
 uint8_t IsButtonPressed(Buttons button);			//true -> return 1, false 0
