@@ -10,19 +10,16 @@
 
 #include "main.h"
 
-#define PORT_BUTTON						GPIOA
-#define NO_OF_BUTTONS 					3
-#define BUTTON_IS_RELEASED				GPIO_PIN_SET
-#define BUTTON_IS_PRESSED				GPIO_PIN_RESET
+#define N0_OF_BUTTONS 				       3
+
+#define BUTTON_PORT							GPIOA
+//timer interrupt duration is 10ms, so to pass 1 second,
+//we need to jump to the interrupt service routine 100 time
+#define DURATION_FOR_AUTO_INCREASING	   100
 
 
-enum Buttons {button0, button1, button2};
-
-void InitButtonReading(void);
-void ButtonReading(void);				//invoke this function in timer.c to read button
-
-uint8_t IsButtonPressed(Buttons button);			//true -> return 1, false 0
-uint8_t IsButtonPressed_1s(Buttons button);
-
+void button_reading(void);
+unsigned char is_button_pressed(unsigned char index);
+unsigned char is_button_pressed_1s(unsigned char index);
 
 #endif /* INC_BUTTON_READING_H_ */
