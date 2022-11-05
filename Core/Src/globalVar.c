@@ -15,9 +15,9 @@ uint8_t	flagDecreaseNumberMode2;
 void InitVar(void){
 	saveBuffer = 0;
 	number = 0;
-	uint8_t flagIncreaseNumberMode1 = 0;
-	uint8_t flagDecreaseNumberMode1 = 0;
+	flagIncreaseNumberMode1 = 0;
+	flagDecreaseNumberMode1 = 0;
 
-	uint8_t	flagDecreaseNumberMode2 = 0;
+	flagDecreaseNumberMode2 = 0;
 }
 
