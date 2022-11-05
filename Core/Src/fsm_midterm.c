@@ -35,23 +35,27 @@ void Mode0Manual(){
 void fsm_simple_buttons_run(){
 	switch(mode){
 	case MODE0:
-		//ex1
-		Mode0Manual();
+//		ex1
 		if(is_button_pressed_3s(INC_BUTTON) || is_button_pressed_3s(DEC_BUTTON)){
 			mode = MODE1;
 		}
 		if(counterTimeout == 0){
+//			we save number in a saveBuffer register before switching to MODE2
 			saveBuffer = number;
 			mode = MODE2;
 		}
+		Mode0Manual();
 		counterTimeout--;
 		break;
 	case MODE1:
-		//in this mode, number increases by 1 every sec
+//		ex2
+//		in this mode, number increases or decreases by 1 every sec
 		if(is_button_pressed_3s(INC_BUTTON)) {
 			flagIncreaseNumberMode1 = 1;
+			flagDecreaseNumberMode1 = 0;
 		}
 		else if(is_button_pressed_3s(DEC_BUTTON)){
+			flagIncreaseNumberMode1 = 0;
 			flagDecreaseNumberMode1 = 1;
 		}
 		else {
@@ -61,12 +65,13 @@ void fsm_simple_buttons_run(){
 		}
 		break;
 	case MODE2:
-		flagDecreaseNumberMode2 = 1;
+//		ex3
 		if(is_button_pressed(INC_BUTTON) || is_button_pressed(DEC_BUTTON)){
 			flagDecreaseNumberMode2 = 0;
 			number = saveBuffer;
 			mode = MODE0;
 		}
+		flagDecreaseNumberMode2 = 1;
 		break;
 	default:
 		break;

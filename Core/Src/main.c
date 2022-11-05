@@ -105,9 +105,9 @@ int main(void)
   while (1)
   {
 	  if(FlagTimer_0()){
-			  fsm_simple_buttons_run();
-			  DisplayNum(number);
-			  SetTimer_0(10);
+		  fsm_simple_buttons_run();
+		  DisplayNum(number);
+		  SetTimer_0(10);
 	  }
 	  if(FlagTimer_1()){
 		  if(flagIncreaseNumberMode1){

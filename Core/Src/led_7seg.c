@@ -1,7 +1,5 @@
 #include "led_7_seg.h"
 
-
-
 void DisplayNum(uint8_t num){
 	switch(num){
 	case 0:

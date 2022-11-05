@@ -13,8 +13,8 @@
 #define N0_OF_BUTTONS 				       3
 
 #define BUTTON_PORT							GPIOA
-//timer interrupt duration is 10ms, so to pass 1 second,
-//we need to jump to the interrupt service routine 100 time
+//timer interrupt duration is 10ms, so to pass 3 second,
+//we need to jump to the interrupt service routine 300 time
 #define DURATION_FOR_AUTO_INCREASING	   300
 
 
