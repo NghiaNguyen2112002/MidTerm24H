@@ -96,7 +96,7 @@ int main(void)
 
   HAL_TIM_Base_Start_IT(& htim2);
 
-  SetTimer_0(500);
+  SetTimer_0(10);
 
   /* USER CODE END 2 */
 
@@ -108,7 +108,7 @@ int main(void)
 	  if(FlagTimer_0()){
 		  fsm_simple_buttons_run();
 		  DisplayNum(number);
-		  SetTimer_0(100);
+		  SetTimer_0(10);
 
 	  }
 

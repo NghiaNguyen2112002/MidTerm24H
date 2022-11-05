@@ -18,7 +18,7 @@ void fsm_for_input_processing(void){
 			if(!is_button_pressed(i)){
 				buttonState[i] = BUTTON_RELEASED;
 			} else {
-				if(is_button_pressed_1s(i)){
+				if(is_button_pressed_3s(i)){
 					buttonState[i] = BUTTON_PRESSED_MORE_THAN_1_SECOND;
 				}
 			}

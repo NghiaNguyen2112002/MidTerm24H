@@ -18,7 +18,7 @@ void fsm_simple_buttons_run(){
 	switch(mode){
 	case MODE0:
 		//ex1
-		if(is_button_pressed(RESET)){
+		if(is_button_pressed(RESET_BUTTON)){
 			number = 0;
 		}
 		else if(is_button_pressed(INC_BUTTON)){
