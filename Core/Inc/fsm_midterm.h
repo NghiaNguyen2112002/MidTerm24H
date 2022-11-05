@@ -10,10 +10,7 @@
 
 #include "main.h"
 #include "button_reading.h"
-
-
-
-void InitFSM(void);
+#include "software_timer.h"
 
 void fsm_simple_buttons_run();
 

@@ -97,7 +97,8 @@ int main(void)
   HAL_TIM_Base_Start_IT(& htim2);
 
   SetTimer_0(10);
-
+  SetTimer_1(1000);
+  InitVar();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -111,7 +112,6 @@ int main(void)
 		  SetTimer_0(10);
 
 	  }
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

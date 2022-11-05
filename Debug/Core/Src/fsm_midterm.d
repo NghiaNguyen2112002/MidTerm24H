@@ -24,7 +24,8 @@ Core/Src/fsm_midterm.o: ../Core/Src/fsm_midterm.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Core/Inc/button_reading.h ../Core/Inc/globalVar.h
+ ../Core/Inc/button_reading.h ../Core/Inc/software_timer.h \
+ ../Core/Inc/globalVar.h
 ../Core/Inc/fsm_midterm.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
@@ -52,4 +53,5 @@ Core/Src/fsm_midterm.o: ../Core/Src/fsm_midterm.c \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 ../Core/Inc/button_reading.h:
+../Core/Inc/software_timer.h:
 ../Core/Inc/globalVar.h:

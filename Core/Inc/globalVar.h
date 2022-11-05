@@ -17,4 +17,9 @@
 extern uint8_t saveBuffer;
 extern uint8_t number;
 
+extern uint8_t flagIncreaseNumber1Sec;
+extern uint8_t flagDecreaseNumber1Sec;
+
+void InitVar(void);
+
 #endif /* INC_GLOBALVAR_H_ */
