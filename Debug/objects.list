@@ -1,4 +1,6 @@
 "./Core/Src/button_reading.o"
+"./Core/Src/fsm_midterm.o"
+"./Core/Src/globalVar.o"
 "./Core/Src/input_processing.o"
 "./Core/Src/led_7seg.o"
 "./Core/Src/main.o"

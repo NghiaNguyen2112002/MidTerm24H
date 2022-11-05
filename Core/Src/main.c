@@ -21,9 +21,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "globalVar.h"
 #include "software_timer.h"
 #include "led_7_seg.h"
 #include "input_processing.h"
+#include "fsm_midterm.h"
 
 /* USER CODE END Includes */
 
@@ -94,9 +96,7 @@ int main(void)
 
   HAL_TIM_Base_Start_IT(& htim2);
 
-  uint8_t index = 0;
-  SetTimer_0(100);
-
+  SetTimer_0(500);
 
   /* USER CODE END 2 */
 
@@ -105,6 +105,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+	  if(FlagTimer_0()){
+		  fsm_simple_buttons_run();
+		  DisplayNum(number);
+		  SetTimer_0(100);
+
+	  }
 
     /* USER CODE BEGIN 3 */
   }
