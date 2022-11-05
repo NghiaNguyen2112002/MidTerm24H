@@ -41,6 +41,7 @@ void fsm_simple_buttons_run(){
 			mode = MODE1;
 		}
 		if(counterTimeout == 0){
+			saveBuffer = number;
 			mode = MODE2;
 		}
 		counterTimeout--;
@@ -61,8 +62,8 @@ void fsm_simple_buttons_run(){
 		break;
 	case MODE2:
 		flagDecreaseNumberMode2 = 1;
-		saveBuffer = number;
 		if(is_button_pressed(INC_BUTTON) || is_button_pressed(DEC_BUTTON)){
+			flagDecreaseNumberMode2 = 0;
 			number = saveBuffer;
 			mode = MODE0;
 		}
