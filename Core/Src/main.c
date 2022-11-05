@@ -24,7 +24,6 @@
 #include "globalVar.h"
 #include "software_timer.h"
 #include "led_7_seg.h"
-#include "input_processing.h"
 #include "fsm_midterm.h"
 
 /* USER CODE END Includes */
