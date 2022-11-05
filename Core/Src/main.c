@@ -105,13 +105,26 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
 	  if(FlagTimer_0()){
-		  fsm_simple_buttons_run();
-		  DisplayNum(number);
-		  SetTimer_0(10);
-
+			  fsm_simple_buttons_run();
+			  DisplayNum(number);
+			  SetTimer_0(10);
 	  }
+	  if(FlagTimer_1()){
+		  if(flagIncreaseNumberMode1){
+				number = number + 1 > 9 ? 0 : number + 1;
+		  }
+		  else if(flagDecreaseNumberMode1){
+				number = number - 1 < 0 ? 9 : number - 1;
+		  }
+		  else if(flagDecreaseNumberMode2){
+				number = number - 1 < 0 ? 0 : number - 1;
+		  }
+		  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+		  SetTimer_1(1000);
+	  }
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
