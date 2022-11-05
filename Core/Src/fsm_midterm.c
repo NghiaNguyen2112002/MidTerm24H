@@ -22,10 +22,10 @@ void fsm_simple_buttons_run(){
 			number = 0;
 		}
 		else if(is_button_pressed(INC_BUTTON)){
-			number++;
+			number = number + 1 > 9 ? 0 : number + 1;
 		}
 		else if(is_button_pressed(DEC_BUTTON)){
-			number--;
+			number = number - 1 < 0 ? 9 : number - 1;
 		}
 		break;
 	case MODE1:
