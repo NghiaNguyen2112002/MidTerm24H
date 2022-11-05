@@ -11,13 +11,8 @@
 #define INC_LED_7_SEG_H_
 
 #define 	PORT_LED		GPIOB
-#define 	MAX_LED_7_SEG	2
 
-void InitLed7Seg(void);
 
-void LightOff();
-void UpdateLed7SegBuffer(uint8_t time1);
-void UpdateLed7Seg(uint8_t index);  //invoke this function to display 2 led7seg
-									//index = 1 -> enable led7seg 1  ...  2 -> led7seg 2
+void DisplayNum(uint8_t num);
 
 #endif /* INC_LED_7_SEG_H_ */

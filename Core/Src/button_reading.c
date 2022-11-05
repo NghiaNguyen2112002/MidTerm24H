@@ -11,7 +11,7 @@
 #define BUTTON_IS_PRESSED                  GPIO_PIN_RESET
 #define BUTTON_IS_RELEASED                 GPIO_PIN_SET
 
-uint16_t buttonPin[3] = {button_0_Pin, button_1_Pin, button_2_Pin};
+uint16_t buttonPin[3] = {RESET_Pin, INC_Pin, DEC_Pin};
 
 //the buffer that the final result is stored after
 //debouncing

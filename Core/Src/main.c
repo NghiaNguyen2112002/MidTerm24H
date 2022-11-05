@@ -105,15 +105,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  fsm_for_input_processing();
 
-	  if(is_button_pressed(0) == 1) UpdateLed7SegBuffer(99);
-
-	  if(FlagTimer_0()){
-		  SetTimer_0(100);
-		  if(index > 1) index = 0;
-		  UpdateLed7Seg(index++);
-	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -214,12 +206,22 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, a_Pin|b_Pin|c_Pin|d_Pin
                           |e_Pin|f_Pin|g_Pin|en_0_Pin
                           |en_1_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : button_0_Pin button_1_Pin button_2_Pin */
-  GPIO_InitStruct.Pin = button_0_Pin|button_1_Pin|button_2_Pin;
+  /*Configure GPIO pin : LED_Pin */
+  GPIO_InitStruct.Pin = LED_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : RESET_Pin INC_Pin DEC_Pin */
+  GPIO_InitStruct.Pin = RESET_Pin|INC_Pin|DEC_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
